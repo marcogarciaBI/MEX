@@ -20,14 +20,9 @@ import pyodbc
 # %%
 path = r'\\NASPRO.infovisiontv.com\Respaldo_Operacion_Cargas\Chedraui\2022'
 files = [f for f in os.listdir(path) if f.endswith('.txt')]
+
 #%%
 %%time
-'''
-for week in range(24, 31):
-    path = r'\\NASPRO.infovisiontv.com\Respaldo_Operacion_Cargas\Chedraui\2022'
-    filename_import = 'Chedraui_{0}012022.txt'
-    filename_import = filename_import.format(week)
-    '''
 for filename_import in files:
     df = pd.read_csv(path + '\\' + filename_import,sep='|',encoding='ANSI')
     df.drop(['OmnicanalUni','OmnicanalVta'],axis=1,inplace=True)
