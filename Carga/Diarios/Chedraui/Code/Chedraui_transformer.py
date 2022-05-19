@@ -42,4 +42,5 @@ for filename_import in files:
 
     filename_export = 'Chedraui_' + ''.join(list(str(df['dia'].unique()[0]))[6:]) + ''.join(list(str(df['dia'].unique()[0]))[4:6]) + ''.join(list(str(df['dia'].unique()[0]))[0:4]) + '.txt'
     df.to_csv(path + '\\' + filename_export, sep='|',encoding='ANSI',index=False)
+
 # %%
